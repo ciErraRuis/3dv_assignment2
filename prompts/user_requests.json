@@ -184,8 +184,20 @@
       "text": "https://github.com/ciErraRuis/3dv_assignment2.git push到这上面吧"
     },
     {
-      "id": "simplify_readme_and_add_members",
-      "text": "1.readme里不要分别展示，就放一个我昨天那种10合1的gif就行。2.不要列举psnr数据什么的，你这个readme就说明doc位置，推理example命令，prompt位置就行。然后放个gif展示一下 3.我们组成员：260010099 MingDa Jia， 260010098 Rui Yan，260010088 徐浩然。分工给你帮我们编一下，平均一下"
+      "id": "explicit_git_authorization_only",
+      "text": "还有别自己提交，我让你提交了你再提交"
+    },
+    {
+      "id": "remove_development_tests",
+      "text": "/mnt/afs/260010098/code/3dv_assignment/tests 这个test呢。能不能删"
+    },
+    {
+      "id": "relative_inference_commands",
+      "text": "你指令别用绝对路径啊，肯定是相对啊"
+    },
+    {
+      "id": "publish_cleaned_repository",
+      "text": "提交到github吧"
     }
   ],
   "model_generation_prompts": [],

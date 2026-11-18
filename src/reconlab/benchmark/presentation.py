@@ -1,21 +1,20 @@
 """Centered upright trajectory used by the selected RoMa + gsplat pipeline."""
 
+from types import SimpleNamespace
+
 import numpy as np
+from PIL import Image
+
+from .core import save_json
 
 
 class CenteredOrbit:
     def __init__(self, model):
         color = model.sh[:, 0] * 0.28209479177387814 + 0.5
-        mask = (
-            (model.opacity[:, 0] > 0.1)
-            & (color.min(1) < 0.9)
-            & np.isfinite(model.xyz).all(1)
-        )
+        mask = (model.opacity[:, 0] > 0.1) & (color.min(1) < 0.9) & np.isfinite(model.xyz).all(1)
         p = model.xyz[mask]
         if len(p) < 20:
-            raise ValueError(
-                "Insufficient foreground Gaussians for centered presentation"
-            )
+            raise ValueError("Insufficient foreground Gaussians for centered presentation")
         lo, hi = np.quantile(p, [0.02, 0.98], axis=0)
         core = p[np.all((p >= lo) & (p <= hi), 1)]
         eig, axes = np.linalg.eigh(np.cov(core.T))
@@ -26,9 +25,7 @@ class CenteredOrbit:
         avg_up /= np.linalg.norm(avg_up)
         alignment = abs(float(np.dot(axes[:, -1], avg_up)))
         use_major = eig[-1] / max(eig[-2], 1e-12) >= 3 and alignment >= 0.85
-        self.up = (
-            axes[:, -1] * np.sign(np.dot(axes[:, -1], avg_up)) if use_major else avg_up
-        )
+        self.up = axes[:, -1] * np.sign(np.dot(axes[:, -1], avg_up)) if use_major else avg_up
         up_policy = (
             "camera-consistent elongated PCA major axis"
             if use_major
@@ -43,9 +40,7 @@ class CenteredOrbit:
         self.side = np.cross(self.up, self.front)
         self.side /= np.linalg.norm(self.side)
         # Fit all selected foreground centers plus 3-sigma splat extent.
-        bound = np.max(
-            np.linalg.norm(p - self.center, axis=1) + 3 * model.scales[mask].max(1)
-        )
+        bound = np.max(np.linalg.norm(p - self.center, axis=1) + 3 * model.scales[mask].max(1))
         self.radius = float(1.12 * bound / np.sin(np.arctan(256 / model.k[0, 0])))
         self.poses = []
         for t in np.arange(72) * 2 * np.pi / 72:
@@ -86,3 +81,63 @@ class CenteredOrbit:
             "camera_to_world_opencv": [x.tolist() for x in self.poses],
             "framing": "All finite opacity>0.1 and nonwhite DC-color centers plus 3-sigma extent; all Gaussians still rendered",
         }
+
+
+class CenteredGaussianRenderer:
+    """Render an upright orbit from estimated cameras and trained Gaussians."""
+
+    def render(self, geometry, params, center, scale, destination):
+        """Presentation path only; independent of heldout metrics and original orbit."""
+        import torch
+        from gsplat import rasterization
+
+        arrays = {k: v.detach().cpu().numpy() for k, v in params.items()}
+        poses = geometry.c2w.copy()
+        poses[:, :3, 3] = (poses[:, :3, 3] - center) / scale
+        model = SimpleNamespace(
+            xyz=arrays["means"],
+            scales=np.exp(arrays["scales"]),
+            opacity=1 / (1 + np.exp(-arrays["opacities"][:, None])),
+            sh=np.concatenate([arrays["sh0"], arrays["shN"]], 1),
+            c2w=poses,
+            k=geometry.intrinsics[0],
+        )
+        orbit = CenteredOrbit(model)
+        frames = []
+        directory = destination / "centered"
+        directory.mkdir(exist_ok=True)
+        with torch.inference_mode():
+            for i, pose in enumerate(orbit.poses):
+                img, _, _ = rasterization(
+                    means=params["means"],
+                    quats=params["quats"],
+                    scales=params["scales"].exp(),
+                    opacities=params["opacities"].sigmoid(),
+                    colors=torch.cat([params["sh0"], params["shN"]], 1),
+                    viewmats=torch.tensor(
+                        np.linalg.inv(pose)[None], dtype=torch.float32, device="cuda"
+                    ),
+                    Ks=torch.tensor(model.k[None], dtype=torch.float32, device="cuda"),
+                    width=512,
+                    height=512,
+                    sh_degree=2,
+                    backgrounds=torch.ones((1, 3), device="cuda"),
+                    packed=False,
+                    near_plane=0.01,
+                    far_plane=100,
+                )
+                image = Image.fromarray(
+                    (img[0].clamp(0, 1).cpu().numpy() * 255).round().astype(np.uint8)
+                )
+                image.save(directory / f"frame_{i:05d}.png")
+                frames.append(image)
+        durations = [(round((i + 1) * 100 / 24) - round(i * 100 / 24)) * 10 for i in range(72)]
+        frames[0].save(
+            destination / "centered.gif",
+            save_all=True,
+            append_images=frames[1:],
+            duration=durations,
+            loop=0,
+            disposal=2,
+        )
+        save_json(destination / "centered.json", orbit.metadata)

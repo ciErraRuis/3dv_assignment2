@@ -7,21 +7,19 @@
 
 ## 推理示例
 
-使用仓库自带的[Doll多视角图像](assets/doll/images)，从6张RGB图像生成匹配结果、相机与点云以及渲染GIF。以下命令适用于配套服务器环境；其他机器需替换绝对路径，并按[示例说明](assets/doll/README.md)准备依赖、RoMa权重和源码缓存。
+使用仓库自带的[Doll多视角图像](assets/doll/images)，从6张RGB图像生成匹配结果、相机与点云以及渲染GIF。先按[示例说明](assets/doll/README.md)准备依赖、RoMa源码和权重缓存，激活Python环境后，在**仓库根目录**运行以下命令。所有路径均相对于仓库根目录。
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 \
-/mnt/afs/260010098/data/envs/3dv-matching/bin/python \
-  /mnt/afs/260010098/code/3dv_assignment/scripts/infer.py \
-  --images /mnt/afs/260010098/code/3dv_assignment/assets/doll/images \
-  --roma-source /mnt/afs/260010098/code/experiment_snapshots/20261115_matching10_stageb_r01/thirdparty/romav2 \
-  --torch-home /mnt/afs/260010098/data/3dv_assignment/matching10_r01/cache/torch \
-  --gsplat-extension /mnt/afs/260010098/data/3dv_assignment/matching10_r01/cache/extensions/gsplat_cuda/gsplat_cuda.so \
-  --output /mnt/afs/260010098/data/3dv_assignment/doll_inference \
+python scripts/infer.py \
+  --images assets/doll/images \
+  --roma-source third_party/romav2 \
+  --torch-home weights/torch \
+  --output outputs/doll \
   --steps 3000
 ```
 
-渲染结果保存到 `/mnt/afs/260010098/data/3dv_assignment/doll_inference/gaussian/centered.gif`。重复运行时请更换输出目录。
+渲染结果保存到 `outputs/doll/gaussian/centered.gif`。重复运行时请更换输出目录。
 
 ## 十物体展示
 

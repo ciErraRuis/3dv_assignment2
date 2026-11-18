@@ -114,12 +114,8 @@ class GaussianInferencePipeline:
         if output.exists():
             raise FileExistsError('Choose a new output directory: ' + str(output))
         resources = self.runtime.prepare()
-        sys.path.insert(0, str(ROOT / 'experiments/roma100'))
-        from filtering import FilterPolicy, FilteredMatcher
-        # Reuse the exact rendering implementation that produced the showcase.
-        spec = importlib.util.spec_from_file_location('roma_submission_runtime', ROOT / 'experiments/roma100/runtime.py')
-        renderer = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(renderer)
+        from reconlab.benchmark.foreground import FilterPolicy, FilteredMatcher
+        from reconlab.benchmark.presentation import CenteredGaussianRenderer
         from reconlab.benchmark.gaussian import GaussianBenchmark
         from reconlab.benchmark.matchers import RomaV2Matcher
         from reconlab.benchmark.sfm import PairwiseReconstruction
@@ -140,7 +136,7 @@ class GaussianInferencePipeline:
             model = GaussianBenchmark(self.steps)
             params, center, scale = model.fit(geometry, images, output / 'gaussian')
             save_json(output / 'status.json', {'state': 'RUNNING', 'stage': 'rendering'})
-            renderer.centered(geometry, params, center, scale, output / 'gaussian')
+            CenteredGaussianRenderer().render(geometry, params, center, scale, output / 'gaussian')
             save_json(output / 'status.json', {'state': 'COMPLETE', 'steps': self.steps,
                       'registered': len(geometry.names), 'input_views': len(inputs.images),
                       'gif': str(output / 'gaussian/centered.gif'), 'gt_used': False})

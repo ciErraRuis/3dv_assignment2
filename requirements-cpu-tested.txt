@@ -1,11 +1,6 @@
-# CPU validation environment: Python 3.13.13; not a GPU backend lock.
+# CPU runtime packages validated with Python 3.13.13; not a GPU backend lock.
 Pillow==12.3.0
-Pygments==2.21.0
 h5py==3.16.0
-iniconfig==2.3.1
 numpy==2.5.4
 opencv-python-headless==4.14.0.94
 packaging==26.3
-pluggy==1.7.0
-pytest==9.2.0
-ruff==0.17.4

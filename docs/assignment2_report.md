@@ -5,9 +5,9 @@
 
 | 学号 | 组员姓名 | 分工安排（建议，提交前由组员核对） |
 | --- | --- | --- |
-| 260010099 | MingDa Jia | 多视角数据整理；RoMa v2匹配与前景、置信度过滤；SfM相机与稀疏点云恢复。 |
-| 260010098 | Rui Yan | 管线架构与模块接口；3D Gaussian Splatting优化与渲染；推理入口及环绕GIF生成。 |
-| 260010088 | 徐浩然 | 视角数量与优化步数对照实验；重建质量分析与结果汇总；报告撰写及GitHub提交材料整理。 |
+| 260010098 | Rui Yan | 多视角数据整理；RoMa v2匹配与前景、置信度过滤；SfM相机与稀疏点云恢复。 |
+| 260010099 | MingDa Jia | 管线架构与模块接口；3D Gaussian Splatting优化与渲染；推理入口及环绕GIF生成。 |
+| 260010088 | Haoran Xu | 视角数量与优化步数对照实验；重建质量分析与结果汇总；报告撰写及GitHub提交材料整理。 |
 
 ## 摘要
 
@@ -91,25 +91,23 @@ with torch.inference_mode():
     image = rgb[0].clamp(0, 1)
 ```
 
-光栅化将三维高斯投影到目标图像，根据观察方向计算球谐颜色，并按深度与不透明度合成像素。展示时，由`CenteredOrbit`生成始终看向物体中心的72个相机位置，依次渲染512×512图像，保存PNG后按24fps编码成3秒GIF；白底、二阶球谐以及近远裁剪面设置与训练后评价保持一致。对应实现是[主实验渲染函数`centered`](../experiments/roma100/runtime.py)与[轨迹类`CenteredOrbit`](../experiments/roma100/presentation.py)。
+光栅化将三维高斯投影到目标图像，根据观察方向计算球谐颜色，并按深度与不透明度合成像素。展示时，由`CenteredOrbit`生成始终看向物体中心的72个相机位置，依次渲染512×512图像，保存PNG后按24fps编码成3秒GIF；白底、二阶球谐以及近远裁剪面设置与训练后评价保持一致。对应实现是[渲染类`CenteredGaussianRenderer`与轨迹类`CenteredOrbit`](../src/reconlab/benchmark/presentation.py)。
 
-普通展示轨迹可由估计的相机和已训练高斯构造，不需要GT相机。留出视角的定量评价则由`GaussianBenchmark.evaluate`使用训练相机中心拟合Sim(3)，再将GT留出相机映射到高斯坐标中。视角数量实验的[`MilestonePublisher.render_fixed_orbit`](../experiments/view_count/runtime.py)也执行这一坐标转换，让不同图数组及checkpoint使用同一实际展示轨迹和内参；该对齐发生在训练结束后，不反馈给匹配、SfM或高斯优化。指标由留出视角的渲染结果计算，GIF只用于展示。
+普通展示轨迹可由估计的相机和已训练高斯构造，不需要GT相机。留出视角的定量评价则由`GaussianBenchmark.evaluate`使用训练相机中心拟合Sim(3)，再将GT留出相机映射到高斯坐标中。报告中的视角数量实验也执行了这一坐标转换，让不同图数组及checkpoint使用同一实际展示轨迹和内参；该对齐发生在训练结束后，不反馈给匹配、SfM或高斯优化。指标由留出视角的渲染结果计算，GIF只用于展示。
 
-**Doll示例与运行命令。** 仓库提供[实际使用的6张Doll多视角RGB](../assets/doll/README.md)，相机参数由推理入口自行恢复。下面在配套GPU环境中从这些asset重新执行完整管线；预训练权重与第三方源码保存在命令指定的外部目录，输出使用一个全新目录：
+**Doll示例与运行命令。** 仓库提供[实际使用的6张Doll多视角RGB](../assets/doll/README.md)，相机参数由推理入口自行恢复。按[Doll示例说明](../assets/doll/README.md)准备依赖、源码和权重缓存，激活兼容的GPU环境后，在**仓库根目录**执行以下命令。所有路径均为相对路径，输出使用一个全新目录：
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 \
-/mnt/afs/260010098/data/envs/3dv-matching/bin/python \
-  /mnt/afs/260010098/code/3dv_assignment/scripts/infer.py \
-  --images /mnt/afs/260010098/code/3dv_assignment/assets/doll/images \
-  --roma-source /mnt/afs/260010098/code/experiment_snapshots/20261115_matching10_stageb_r01/thirdparty/romav2 \
-  --torch-home /mnt/afs/260010098/data/3dv_assignment/matching10_r01/cache/torch \
-  --gsplat-extension /mnt/afs/260010098/data/3dv_assignment/matching10_r01/cache/extensions/gsplat_cuda/gsplat_cuda.so \
-  --output /mnt/afs/260010098/data/3dv_assignment/doll_inference \
+python scripts/infer.py \
+  --images assets/doll/images \
+  --roma-source third_party/romav2 \
+  --torch-home weights/torch \
+  --output outputs/doll \
   --steps 3000
 ```
 
-生成的匹配连线位于输出目录的`visuals`，估计几何为`geometry.npz`，最终动画为`gaussian/centered.gif`。追加`--check-inputs`可仅在CPU上检查图片尺寸与哈希，不启动重建。迁移机器时需替换为本机绝对路径并准备兼容依赖；新命令包装的CPU核验与既有算法的GPU实验记录分开，不将未执行的新运行记为完成。
+生成的匹配连线位于输出目录的`visuals`，估计几何为`geometry.npz`，最终动画为`gaussian/centered.gif`。追加`--check-inputs`可仅在CPU上检查图片尺寸与哈希，不启动重建。源码与缓存需提前放入命令指定的目录，也可按实际位置修改相对路径；新命令包装的CPU核验与既有算法的GPU实验记录分开，不将未执行的新运行记为完成。
 
 ## 3. Analysis and Findings
 

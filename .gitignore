@@ -45,3 +45,6 @@ assets/showcase/*/gaussian/reconstruction.gif
 
 # Assignment matching evidence must be included in GitHub.
 !assets/showcase/**/*.npz
+
+# External source checkout used by the relative-path inference example.
+/third_party/
