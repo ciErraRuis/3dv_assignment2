@@ -198,6 +198,10 @@
     {
       "id": "publish_cleaned_repository",
       "text": "提交到github吧"
+    },
+    {
+      "id": "set_group_three_and_push",
+      "text": "组号是第三组，在报告里写一下然后push上去"
     }
   ],
   "model_generation_prompts": [],

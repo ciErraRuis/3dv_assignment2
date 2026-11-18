@@ -1,6 +1,6 @@
 # Assignment 2：多视角图像三维重建与高斯渲染
 
-**组号：** [待填写]  
+**组号：** 第三组  
 **GitHub 仓库：** [https://github.com/ciErraRuis/3dv_assignment2](https://github.com/ciErraRuis/3dv_assignment2)
 
 | 学号 | 组员姓名 | 分工安排（建议，提交前由组员核对） |
