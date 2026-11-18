@@ -1,0 +1,11 @@
+{
+  "frames": 72,
+  "fps": 24,
+  "seconds": 3,
+  "size": [
+    512,
+    512
+  ],
+  "camera_path": "GT orbit transformed only by train-camera Sim3 for evaluation",
+  "gif_timing": "centisecond quantization; original 72 PNG frames retained"
+}

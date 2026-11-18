@@ -1,0 +1,10 @@
+# Python 3.11; CUDA-enabled torch build must match the selected environment.
+# This is the minimal pilot backend, not Nerfstudio's full dependency tree.
+torch==2.7.1+cu126
+numpy==1.26.4
+Pillow==12.3.0
+gsplat==1.4.0
+pytorch-msssim==1.0.0
+ninja==1.13.2
+jaxtyping==0.3.11
+rich==15.0.0

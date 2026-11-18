@@ -1,0 +1,16 @@
+{
+  "steps": 3000,
+  "seed": 42,
+  "initial_points": 20000,
+  "initial_extent": 0.65,
+  "initial_scale": 0.015,
+  "initial_opacity": 0.1,
+  "sh_degree": 2,
+  "sh_interval": 500,
+  "ssim_weight": 0.2,
+  "refine_start": 200,
+  "refine_stop": 2500,
+  "refine_every": 100,
+  "reset_every": 1000,
+  "log_every": 100
+}

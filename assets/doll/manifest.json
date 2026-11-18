@@ -1,0 +1,38 @@
+{
+  "uid": "6f98c7c8ef0d456f8ce0a76e406c4696",
+  "name": "Doll",
+  "size": [
+    512,
+    512
+  ],
+  "frames": [
+    {
+      "file": "images/view_001.png",
+      "sha256": "e8f41b8124ead01080d86551346fe925ab2afdd475e6e66fa41d06e0a0ac7da0"
+    },
+    {
+      "file": "images/view_009.png",
+      "sha256": "cad9c35dd35a5c72765ad734080f3f9bf8a0ad05718347f3189488184854d9f5"
+    },
+    {
+      "file": "images/view_017.png",
+      "sha256": "c665be1d83f087f3a968763cf3598c4942fec57b3151dfd133ca663e843f9c6f"
+    },
+    {
+      "file": "images/view_025.png",
+      "sha256": "da232d932295b2afdc55459e08c59c504f04d9ec3dace4a92a72537463513d14"
+    },
+    {
+      "file": "images/view_033.png",
+      "sha256": "404d1a9f45b1d1362f74bfb220cd3b3a8d7632a49637f0be70c9c165e6b8ff0b"
+    },
+    {
+      "file": "images/view_041.png",
+      "sha256": "df62f870b700f18c5e33d9ed99cc37061440eb52882f02d5c1398ae73d3c86ee"
+    }
+  ],
+  "license": "by",
+  "source_url": "https://sketchfab.com/3d-models/6f98c7c8ef0d456f8ce0a76e406c4696",
+  "processing": "Actual6 training RGBs; full frame, white background, no new resize/crop",
+  "camera_metadata_included": false
+}

@@ -1,0 +1,89 @@
+{
+  "views": [
+    {
+      "name": "view_000.png",
+      "split": "test",
+      "psnr": 19.849803924560547,
+      "foreground_psnr": 7.58917236328125,
+      "ssim": 0.9535331726074219
+    },
+    {
+      "name": "view_004.png",
+      "split": "val",
+      "psnr": 18.54895782470703,
+      "foreground_psnr": 6.719017505645752,
+      "ssim": 0.9463236331939697
+    },
+    {
+      "name": "view_008.png",
+      "split": "test",
+      "psnr": 18.139904022216797,
+      "foreground_psnr": 6.8113508224487305,
+      "ssim": 0.9381545782089233
+    },
+    {
+      "name": "view_012.png",
+      "split": "val",
+      "psnr": 20.461780548095703,
+      "foreground_psnr": 8.103560447692871,
+      "ssim": 0.9535350203514099
+    },
+    {
+      "name": "view_016.png",
+      "split": "test",
+      "psnr": 18.66323471069336,
+      "foreground_psnr": 6.9795942306518555,
+      "ssim": 0.9435317516326904
+    },
+    {
+      "name": "view_020.png",
+      "split": "val",
+      "psnr": 18.222482681274414,
+      "foreground_psnr": 6.778614521026611,
+      "ssim": 0.9365278482437134
+    },
+    {
+      "name": "view_024.png",
+      "split": "test",
+      "psnr": 20.446748733520508,
+      "foreground_psnr": 7.776519775390625,
+      "ssim": 0.9560540914535522
+    },
+    {
+      "name": "view_028.png",
+      "split": "val",
+      "psnr": 19.210954666137695,
+      "foreground_psnr": 6.9563398361206055,
+      "ssim": 0.9500406980514526
+    },
+    {
+      "name": "view_032.png",
+      "split": "test",
+      "psnr": 19.057575225830078,
+      "foreground_psnr": 7.14236307144165,
+      "ssim": 0.9454045295715332
+    },
+    {
+      "name": "view_036.png",
+      "split": "val",
+      "psnr": 21.85886573791504,
+      "foreground_psnr": 8.719043731689453,
+      "ssim": 0.9596087336540222
+    },
+    {
+      "name": "view_040.png",
+      "split": "test",
+      "psnr": 19.34320831298828,
+      "foreground_psnr": 7.171131134033203,
+      "ssim": 0.949122428894043
+    },
+    {
+      "name": "view_044.png",
+      "split": "val",
+      "psnr": 18.910913467407227,
+      "foreground_psnr": 7.013071060180664,
+      "ssim": 0.942990779876709
+    }
+  ],
+  "mask_source": "reference RGB < .96 in any channel"
+}

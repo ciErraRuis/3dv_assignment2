@@ -1,0 +1,55 @@
+{
+  "frames": [
+    {
+      "name": "view_001.png",
+      "sha256": "e8f41b8124ead01080d86551346fe925ab2afdd475e6e66fa41d06e0a0ac7da0",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "name": "view_009.png",
+      "sha256": "cad9c35dd35a5c72765ad734080f3f9bf8a0ad05718347f3189488184854d9f5",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "name": "view_017.png",
+      "sha256": "c665be1d83f087f3a968763cf3598c4942fec57b3151dfd133ca663e843f9c6f",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "name": "view_025.png",
+      "sha256": "da232d932295b2afdc55459e08c59c504f04d9ec3dace4a92a72537463513d14",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "name": "view_033.png",
+      "sha256": "404d1a9f45b1d1362f74bfb220cd3b3a8d7632a49637f0be70c9c165e6b8ff0b",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "name": "view_041.png",
+      "sha256": "df62f870b700f18c5e33d9ed99cc37061440eb52882f02d5c1398ae73d3c86ee",
+      "size": [
+        512,
+        512
+      ]
+    }
+  ],
+  "split": "train",
+  "camera_metadata_supplied": false,
+  "preprocessing": "full-frame 512 RGB"
+}

@@ -1,0 +1,14 @@
+{
+  "steps": 3000,
+  "initial_points": 6071,
+  "final_points": 9576,
+  "seconds": 12.961156506091356,
+  "checkpoint_sha256": "cb213f11d8f6e44121917b8e1b852f8e4bea569c9fada67dd816cd1ba484153d",
+  "peak_vram_gib": 1.1475715637207031,
+  "initialization": "estimated point cloud, at most 20000 points, KNN scales",
+  "training_camera_source": "estimated; no GT",
+  "registered_views": 6,
+  "tf32": false,
+  "opacity_reset_every": 3000,
+  "seed": 42
+}

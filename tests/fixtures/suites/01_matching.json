@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "question": "How does the feature-and-matcher frontend affect SfM and final rendering?",
+  "controls": ["identical input views and splits", "identical pair graph", "identical geometric-verification settings", "same reconstruction backend, seed, and budget"],
+  "limitations": ["SIFT/ratio vs SuperPoint/LightGlue changes both detector and matcher", "F-RANSAC diagnostics and COLMAP inliers are distinct", "held-out images participate in SfM, not radiance training"],
+  "base": {"name": "base", "reconstructor": {"name": "splatfacto"}},
+  "variants": [
+    {"name": "matching_sift_ratio", "overrides": {}},
+    {"name": "matching_superpoint_lightglue", "overrides": {
+      "extractor": {"name": "superpoint", "options": {"max_keypoints": 4096, "device": "cpu"}},
+      "matcher": {"name": "lightglue", "options": {"features": "superpoint", "device": "cpu"}}
+    }}
+  ]
+}

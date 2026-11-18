@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "scope": "Actual user requests in this conversation; not an invented reconstruction prompt. No hidden/system instructions are included.",
+  "requests": [
+    {
+      "id": "idea_request",
+      "text": "Assignment 2—3D Reconstruction and Rendering 11/3/2026, 3:58:48 PM\n\nDear all,\n\nThe second assignment is now available. Using the data cleaned in Assignment 1, build a complete pipeline from images to 3D reconstruction and rendering using NeRF or 3DGS. Analyze which steps throughout the pipeline affect the final reconstruction results.\n\nRun your pipeline on 10 different objects and generate a GIF animation for each object to showcase the reconstruction results.\n\nEach group must submit the following two item:\n\n1.Pipeline documentation: Describe the complete pipeline and its implementation, present your analysis and findings, and include a link to your GitHub repository.\n\n2.GitHub repository: Include the complete code, all prompts used, point-matching results for all 10 objects, and GIF renderings generated using NeRF or 3DGS.\n\nPlease clearly state your group number, group members’ names, and each member’s contributions in the documentation.\n\nExample:\n[Image #1] /mnt/afs/260010098/data/3dv_assignment/image (1).png 这个是我作业的要求，你看一下，然后想几个idea给我，我看看走哪条比较好",
+      "attachment": "/mnt/afs/260010098/data/3dv_assignment/image.png"
+    },
+    {
+      "id": "implementation_request",
+      "text": "你都实现吧。至少要把基本的框架搭起来，其余具体的重建等可以通过类接口去应用新的实现。注意框架的封装性和可拓展性，尽量用类去实现，符合工程代码的规范。开始吧。"
+    },
+    {
+      "id": "objaverse_pilot",
+      "text": "作业1是要求洗一下2d objaverse这个数据集。你看看这个东西能不能先下个几个代表性的例子跑一下这个渲染"
+    },
+    {
+      "id": "objaverse_correction",
+      "text": "是3d"
+    },
+    {
+      "id": "pilot_resolution",
+      "text": "512×512（推荐）：保留更多纹理和细杆细节，输入与输出同尺寸，计算稍多。",
+      "context": "48 views per object: 36 train / 6 validation / 6 test; white background, uniform normalization, no crop; 72-frame 24fps 3s orbit."
+    },
+    {
+      "id": "objaverse_expand_100",
+      "text": "你为啥不多下一些，至少下个100个吧",
+      "scope": "Download raw assets until at least 100 distinct Objaverse objects are locally available, reusing existing four; no new training."
+    },
+    {
+      "id": "run_all_100",
+      "text": "可以，反正你先都跑一下吧，结果都展示一下，看看共性的问题是什么"
+    },
+    {
+      "id": "gpu_source_rendering",
+      "text": "不对啊，你那个图片真的需要用cpu去生成吗",
+      "implementation": "Use Cycles CUDA on the SCO GPU, keeping previously approved image/camera/light/sample settings; hardware smoke check first."
+    },
+    {
+      "id": "modern_matching_request",
+      "text": "那你先重点搜一下现在这种特征点匹配然后做重建的方法有什么吧，多测一些方法找个最好的，对比写到报告里"
+    },
+    {
+      "id": "fixed_ten_matching",
+      "text": "是的，所以我感觉应该还是要整一下点匹配。反正那几个算法你都赶快试一下吧，跑10个例子都测试一下吧。"
+    },
+    {
+      "id": "internal_resize_confirmed",
+      "text": "允许内部等比缩放（推荐）：覆盖全部候选方法，按完整系统比较，并披露尺寸和计算量差异。"
+    },
+    {
+      "id": "remove_external_intrinsics_route",
+      "text": "你要不把需要估内参的方法去掉吧"
+    },
+    {
+      "id": "expanded_comparison",
+      "text": "反正你一直帮我跑着吧。重点要做的事情如下：1.多测试几个关键点检测的方法，然后画出example的那种图，并且接上sfm的3d重建并展示结果。这里参考图的数量也做一下设置对比，比如3张，5张，10张等等。2.去用gt的相机位置去尝试不同的高斯渲染方式，反正能接上前面的3d重建管线，并且效果要好。你先固定10个例子，然后都在这上面测，找到一个最好的。然后准备一下作业里要提交的报告。你还有什么问题吗，有问题就和我确认，没有就开始吧"
+    },
+    {
+      "id": "view_sampling_confirmed",
+      "text": "两种都测（推荐）：均匀覆盖一圈＋连续相邻视角，分别比较覆盖率与匹配难度"
+    },
+    {
+      "id": "traditional_and_slam",
+      "text": "关键点检测sift，surf这种传统方法也补上，然后是不是还有像slam和一些比较新的sfm方法也可以试试"
+    },
+    {
+      "id": "repair_missing_report_images",
+      "text": "图片一张都显示不了"
+    },
+    {
+      "id": "resume_on_account88_four_available_gpus",
+      "text": "是不是没有跑完啊，你看看88的卡还有没有空的，有的话4张卡全部用上",
+      "scope": "Account 260010088 only, up to four available GPUs. Preserve completed results and approved experiment settings; unrelated tasks are not authorized to stop."
+    },
+    {
+      "id": "resume_on_account98_four_gpus_check88",
+      "text": "你用98的卡吧，4张都用上。然后88的卡帮我看看现在有没有空出来",
+      "scope": "Resume unfinished fixed-ten experiments on account260010098 with4GPUs; read-only occupancy check of260010088."
+    },
+    {
+      "id": "sparse_3_to_6_views",
+      "text": "是因为输入图片数量太多了吗，是的话就减少到3-6张吧"
+    },
+    {
+      "id": "screen_3000_then_best_30000",
+      "text": "每组先3000步筛选，选优后再跑30000步"
+    },
+    {
+      "id": "roma_extension",
+      "text": "看着还是roma v2效果比较好啊，能用它多跑一些例子吗",
+      "context": "Actual user instruction from this conversation; editorial whitespace may be normalized."
+    },
+    {
+      "id": "foreground_filter",
+      "text": "以及我看特征点匹配怎么有一堆落到背景的白色画面上了啊，这个能避免吗",
+      "context": "Actual user instruction from this conversation; editorial whitespace may be normalized."
+    },
+    {
+      "id": "confidence_filter",
+      "text": "还有就是是不是又置信度这玩意，有的话能不能把置信度低的点筛掉",
+      "context": "Actual user instruction from this conversation; editorial whitespace may be normalized."
+    },
+    {
+      "id": "filter_comparison",
+      "text": "先在原10例比较原版与过滤版，再把验证集表现更好的版本扩到固定100例",
+      "context": "Actual user instruction from this conversation; editorial whitespace may be normalized."
+    },
+    {
+      "id": "selected_filter_100",
+      "text": "我看了一下这个mask + 置信度的，还挺好的，用这个吧，跑100个例子",
+      "context": "Actual user instruction from this conversation; editorial whitespace may be normalized."
+    },
+    {
+      "id": "centered_gif",
+      "text": "你这个相机旋转为什么永远是歪着的啊，你就不能对准中心然后转吗。gif的",
+      "context": "Actual user instruction from this conversation; editorial whitespace may be normalized."
+    },
+    {
+      "id": "write_documentation",
+      "text": "你开始按照作业的要求写文档吧",
+      "context": "Actual user instruction from this conversation; editorial whitespace may be normalized."
+    },
+    {
+      "id": "showcase_uids",
+      "text": "6f98c7c8ef0d456f8ce0a76e406c4696 3bb4f120d0df42fcba3dc4f550aaa9e5 304253851afd493d958fc8e256c189df 7ab75054dea04187bca4da0917f501a3 f609dee009554b3c9926504eb80f8029 52b6d5de9f8847dba363a93761874c9e 52b6d5de9f8847dba363a93761874c9e a3c221e5504d40a8ba019f8f1bf5ab0e a3c221e5504d40a8ba019f8f1bf5ab0e 401df6b99a4142eeb6bb1c02ef09c18d 要求的物体渲染gif放这几个吧",
+      "context": "Actual user instruction from this conversation; editorial whitespace may be normalized."
+    },
+    {
+      "id": "showcase_add_two",
+      "text": "120771dca01f44539491395b8daec730 615aa16e2f1946f48bc3aca64e97b618加这两个吧",
+      "context": "Actual user instruction from this conversation; editorial whitespace may be normalized."
+    },
+    {
+      "id": "readme_gallery",
+      "text": "你不需要在文档里写，反正最后要交github地址的，你准备放到readme里去就行。文档按照作业的要求来写。",
+      "context": "Actual user instruction from this conversation; editorial whitespace may be normalized."
+    },
+    {
+      "id": "report_scope",
+      "text": "Pipeline documentation: Describe the complete pipeline and its implementation, present your analysis and findings, and include a link to your GitHub repository.帮你回顾一下",
+      "context": "Actual user instruction from this conversation; editorial whitespace may be normalized."
+    },
+    {
+      "id": "optimize_15k_save_every3k",
+      "text": "算了，你就直接每个都优化15k步看看效果吧，然后每3k步保存一下看看有没有区别。重新启动命令吧"
+    },
+    {
+      "id": "view_count_expansion",
+      "text": "你看看能不能再帮我增加更多视角图再去做重建+渲染呢，看看视角图数量对结果的影响"
+    },
+    {
+      "id": "view_count_report_analysis",
+      "text": "这组跑完后你可以在报告的analysis中加入一段简单分析"
+    },
+    {
+      "id": "github_cleanup",
+      "text": "你现在帮我把实验目录里不需要的文件都删了吧，我打算推到github上了"
+    },
+    {
+      "id": "simplify_submission_docs",
+      "text": "/mnt/afs/260010098/code/3dv_assignment/docs 这里面需要这么多吗"
+    },
+    {
+      "id": "document_inference_method",
+      "text": "你文档里面写上推理方法吧。"
+    },
+    {
+      "id": "prune_submission_directories",
+      "text": "/mnt/afs/260010098/code/3dv_assignment/artifacts /mnt/afs/260010098/code/3dv_assignment/configs /mnt/afs/260010098/code/3dv_assignment/experiments 这里面哪些是提交作业时必要的东西，不必要的都删掉。"
+    },
+    {
+      "id": "doll_inference_asset",
+      "text": "以及把doll那个例子的多视图作为asset，推理命令example就那那个作为asset"
+    },
+    {
+      "id": "consolidate_submission_assets",
+      "text": "不需要的东西能不能都删了。这个/mnt/afs/260010098/code/3dv_assignment/artifacts里面要提交的东西放到asset里行不。"
+    },
+    {
+      "id": "publish_github_repository",
+      "text": "https://github.com/ciErraRuis/3dv_assignment2.git push到这上面吧"
+    }
+  ],
+  "model_generation_prompts": [],
+  "note": "No generative image/video model was invoked. Record future prompts verbatim with model/version and affected artifacts; this file does not claim to be a complete future project transcript.",
+  "completeness_note": "Retained task-relevant user prompts available in this conversation. This is not a verbatim export of every historical model call; unavailable prompts are not invented."
+}

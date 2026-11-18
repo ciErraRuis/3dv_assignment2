@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "objects": [{
+    "id": "object_01",
+    "views": [
+      {"id": "view_000", "image": "/mnt/afs/260010098/data/3dv_assignment/objects/object_01/images/000.png", "split": "train", "azimuth_deg": 0},
+      {"id": "view_001", "image": "/mnt/afs/260010098/data/3dv_assignment/objects/object_01/images/001.png", "split": "train", "azimuth_deg": 30},
+      {"id": "view_002", "image": "/mnt/afs/260010098/data/3dv_assignment/objects/object_01/images/002.png", "split": "val", "azimuth_deg": 60},
+      {"id": "view_003", "image": "/mnt/afs/260010098/data/3dv_assignment/objects/object_01/images/003.png", "split": "test", "azimuth_deg": 90}
+    ]
+  }]
+}

@@ -1,0 +1,13 @@
+{
+  "source_sha256": "700107b65340c1b8f12febaeae3a6cf746ea08f43cf299219ee9eb55212e301b",
+  "shape": [
+    1,
+    3,
+    1280,
+    1280
+  ],
+  "dtype": "float32",
+  "tensor_sha256": "0a40857a93bc756185e5ad0e24bec1cb1e5171ca09ae8f1d11e3550a6557d9a5",
+  "display": "PNG rounded to 8-bit; float tensor hash retained",
+  "stage": "fine_1280"
+}

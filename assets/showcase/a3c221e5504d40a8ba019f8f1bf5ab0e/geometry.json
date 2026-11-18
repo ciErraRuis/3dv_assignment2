@@ -1,0 +1,12 @@
+{
+  "method": "fg_conf050",
+  "registered": 6,
+  "points3d": 4232,
+  "reprojection_error_px": 0.7333467035175911,
+  "mean_track_length": 2.9676275992438566,
+  "pose_source": "estimated_from_train_RGB",
+  "gt_cameras_consumed": false,
+  "components": 1,
+  "input_views": 6,
+  "registration_rate": 1.0
+}

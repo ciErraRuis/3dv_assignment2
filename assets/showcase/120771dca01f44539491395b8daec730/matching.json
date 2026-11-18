@@ -1,0 +1,115 @@
+{
+  "method": "fg_conf050",
+  "feature_seconds": 0.2507588677108288,
+  "total_seconds": 55.8402054682374,
+  "pairs": [
+    {
+      "first": "view_001.png",
+      "second": "view_009.png",
+      "matches": 479,
+      "inliers": 474,
+      "seconds": 8.977791517972946
+    },
+    {
+      "first": "view_001.png",
+      "second": "view_017.png",
+      "matches": 427,
+      "inliers": 415,
+      "seconds": 3.5054628662765026
+    },
+    {
+      "first": "view_001.png",
+      "second": "view_025.png",
+      "matches": 442,
+      "inliers": 442,
+      "seconds": 10.46892649307847
+    },
+    {
+      "first": "view_001.png",
+      "second": "view_033.png",
+      "matches": 423,
+      "inliers": 420,
+      "seconds": 0.9658541157841682
+    },
+    {
+      "first": "view_001.png",
+      "second": "view_041.png",
+      "matches": 486,
+      "inliers": 467,
+      "seconds": 0.5854676179587841
+    },
+    {
+      "first": "view_009.png",
+      "second": "view_017.png",
+      "matches": 546,
+      "inliers": 536,
+      "seconds": 3.933678161352873
+    },
+    {
+      "first": "view_009.png",
+      "second": "view_025.png",
+      "matches": 456,
+      "inliers": 446,
+      "seconds": 2.772514782845974
+    },
+    {
+      "first": "view_009.png",
+      "second": "view_033.png",
+      "matches": 437,
+      "inliers": 436,
+      "seconds": 0.38122572377324104
+    },
+    {
+      "first": "view_009.png",
+      "second": "view_041.png",
+      "matches": 744,
+      "inliers": 729,
+      "seconds": 0.42755870148539543
+    },
+    {
+      "first": "view_017.png",
+      "second": "view_025.png",
+      "matches": 492,
+      "inliers": 470,
+      "seconds": 4.27096051722765
+    },
+    {
+      "first": "view_017.png",
+      "second": "view_033.png",
+      "matches": 669,
+      "inliers": 652,
+      "seconds": 0.39876146987080574
+    },
+    {
+      "first": "view_017.png",
+      "second": "view_041.png",
+      "matches": 705,
+      "inliers": 705,
+      "seconds": 0.8051943108439445
+    },
+    {
+      "first": "view_025.png",
+      "second": "view_033.png",
+      "matches": 473,
+      "inliers": 470,
+      "seconds": 0.5952105708420277
+    },
+    {
+      "first": "view_025.png",
+      "second": "view_041.png",
+      "matches": 469,
+      "inliers": 450,
+      "seconds": 4.105708308517933
+    },
+    {
+      "first": "view_033.png",
+      "second": "view_041.png",
+      "matches": 577,
+      "inliers": 557,
+      "seconds": 12.084596425294876
+    }
+  ],
+  "track_consolidation": "nearest original-image pixel; one-to-one per pair",
+  "reused_pairs": 0,
+  "timing_note": "Measured current work; reused pair inference time is excluded."
+}

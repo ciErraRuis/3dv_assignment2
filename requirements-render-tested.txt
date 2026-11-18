@@ -1,0 +1,5 @@
+# Isolated Python 3.11. Requires the host's Blender native graphics libraries.
+bpy==4.2.0
+numpy==1.26.4
+Pillow==12.3.0
+trimesh==4.12.2

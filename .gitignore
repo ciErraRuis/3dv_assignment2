@@ -1,0 +1,47 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+.venv/
+build/
+dist/
+*.ckpt
+*.pth
+*.pt
+*.npz
+*.h5
+outputs/
+
+# Local credentials and machine-generated files.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+tmp.txt
+*.log
+*.tmp
+*.pending
+.DS_Store
+.coverage
+htmlcov/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Raw assets, trained weights and runtime output live outside the source repo.
+/data/
+/weights/
+/checkpoints/
+/runs/
+/logs/
+*.safetensors
+*.glb
+*.gltf
+
+# The submission uses centered.gif; retain the alternate trajectory on AFS only.
+assets/showcase/*/gaussian/reconstruction.gif
+
+# Assignment matching evidence must be included in GitHub.
+!assets/showcase/**/*.npz

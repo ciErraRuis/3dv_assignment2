@@ -1,0 +1,9 @@
+{
+  "raw": 5000,
+  "foreground_pass": 3683,
+  "score_pass": 3620,
+  "kept": 3556,
+  "minimum_overlap": 0.5,
+  "score_semantics": "predicted overlap, not calibrated correspondence correctness",
+  "fallback_to_rejected_points": false
+}

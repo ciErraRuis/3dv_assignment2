@@ -1,0 +1,274 @@
+{
+  "runtime.py": {
+    "source": "/mnt/afs/260010098/code/runner/20261117_roma100_filter_r04/runtime.py",
+    "sha256": "7e354c7c30e9ede41fe29bb17ad13e7078d93397eafc24fcc70a1b5040d5e88e",
+    "export_sha256": "8ed95e76a887711cbb5479b79dcea2f998d7e5c917caf54f16f775cf33ec3418",
+    "export_changes": "Repository path consolidation; original scientific run source remains at recorded source path"
+  },
+  "filtering.py": {
+    "source": "/mnt/afs/260010098/code/runner/20261117_roma100_filter_r04/filtering.py",
+    "sha256": "74c1416799dc1f3b05fede84aabcc56157e1749392aab2527fcd979f93ec6271",
+    "export_sha256": "5e033fc7637da5bf50df979c5d3b25802795edfd3d6fd5475ec868989f2c806f",
+    "export_changes": "Repository path consolidation; original scientific run source remains at recorded source path"
+  },
+  "geometry.py": {
+    "source": "/mnt/afs/260010098/code/runner/20261117_roma100_filter_r04/geometry.py",
+    "sha256": "90ce7462e8d8ea11feb0c26209ee21a27965455b4a73883c32bf3a892ad5e26b"
+  },
+  "sources.py": {
+    "source": "/mnt/afs/260010098/code/runner/20261117_roma100_filter_r04/sources.py",
+    "sha256": "59cfdc80c124f7cc073a3afc877a971c52af692873efd7c57840accb94a618cb",
+    "export_sha256": "5b40d58db9e79c78ddb427be251ad26df35ce6c0095c074a1c7f88bf4d0ac175",
+    "export_changes": "Repository path consolidation; original scientific run source remains at recorded source path"
+  },
+  "test_filtering.py": {
+    "source": "/mnt/afs/260010098/code/runner/20261117_roma100_filter_r04/test_filtering.py",
+    "sha256": "12342fe6569a7334bc1ce6dd5ec2eeb4b66a85aa09469ff1cd937eb035219d7b"
+  },
+  "test_selection.py": {
+    "source": "/mnt/afs/260010098/code/runner/20261117_roma100_filter_r04/test_selection.py",
+    "sha256": "620adb335995b812c25f4d7f49ce093d96f8e4179b2320a0f421d5fb37b0b076"
+  },
+  "../../configs/roma100.json": {
+    "source": "/mnt/afs/260010098/code/runner/20261117_roma100_filter_r04/config.json",
+    "sha256": "d3af6c18e74af346f51f5acbd1d2aa2ebca58412e75812007d20ff928f3763b8"
+  },
+  "presentation.py": {
+    "source": "/mnt/afs/260010098/code/runner/20261117_instantsplat100_r01/presentation.py",
+    "sha256": "eecd3422c18a4f99cfcce0d721e1ba3021156a52a5d36098a1337c1620fb0826",
+    "export_sha256": "867c4ea134f7498b8a153e5eb1480de7b23ee595e11807cbe0265bf8234a93db",
+    "export_changes": "Repository path consolidation; original scientific run source remains at recorded source path"
+  },
+  "../../src/reconlab/__init__.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/__init__.py",
+    "sha256": "79a58e035e22e894bc335ef1b43bbc0c623ef8a25bcdb93ce6c707f7365fe8a4"
+  },
+  "../../src/reconlab/__main__.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/__main__.py",
+    "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+  },
+  "../../src/reconlab/artifacts.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/artifacts.py",
+    "sha256": "f8c620c04cefbea4f63046f2d633f8d30cd3f965ce0afa64c3fe2b047bfb09ee"
+  },
+  "../../src/reconlab/batch_analysis.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/batch_analysis.py",
+    "sha256": "5b71ca52c1626b62f796fb7a2130e1b67ac2164502eea0383226d281cb8d2e30"
+  },
+  "../../src/reconlab/cli.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/cli.py",
+    "sha256": "fff621c2164df03a32263b773f7228eac1d6065298ce5b03e75ece03d37c0450"
+  },
+  "../../src/reconlab/config.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/config.py",
+    "sha256": "739f259ff2a9dde8ba8f5c1517bd12dc47c6ed5a0f4ffce7093667a651f48237"
+  },
+  "../../src/reconlab/data.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/data.py",
+    "sha256": "4bc8156446bbe659916f7d1d2d49b703bcdd1c1d1f840c3e4610cc8e48171f1f"
+  },
+  "../../src/reconlab/errors.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/errors.py",
+    "sha256": "14c966a95c7bfacbc9a93ea2abd0a0d16ce425148db66a2f26734e121f911b31"
+  },
+  "../../src/reconlab/evaluation.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/evaluation.py",
+    "sha256": "5e5bb4cfaa3e6738f2bf494ae110e77cfcd0c8e8751e9d5663ace809f68ac967"
+  },
+  "../../src/reconlab/experiments.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/experiments.py",
+    "sha256": "a8d79e3ffe70007b93c168b879f8282799911c32cc85fda9a72b72b899cb0f44"
+  },
+  "../../src/reconlab/factory.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/factory.py",
+    "sha256": "ea10f152c892e2fe04f66590c4f597257a12774450413111f7256cd5cf744f28"
+  },
+  "../../src/reconlab/features.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/features.py",
+    "sha256": "cff98bd94cfa786e79371477c493d2cc26b21e887baacacd5bceb1d8e30ccaa9"
+  },
+  "../../src/reconlab/frontend.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/frontend.py",
+    "sha256": "54399b3589ff3c574a77c39fc7fed6ed2fe0439a14df197ebc7fb223d37515d5"
+  },
+  "../../src/reconlab/interfaces.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/interfaces.py",
+    "sha256": "f20afa6396287627207ea9fc42c72c5231c1ce2568bd992087b0a81a1b444ab5"
+  },
+  "../../src/reconlab/io.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/io.py",
+    "sha256": "b94dba7d75a3b0344fba0b17bdebf05267110ffea508e7bfd7de73817422473c"
+  },
+  "../../src/reconlab/matching.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/matching.py",
+    "sha256": "8888bb20b252eb666ce868ec8d45b9ae1fdf57bb47f02e125afe536fb7587c4c"
+  },
+  "../../src/reconlab/objaverse.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/objaverse.py",
+    "sha256": "37ec03ca3a94606a474036c1d6d099d08e58d5cd880749ab32a2776f80a4f394"
+  },
+  "../../src/reconlab/objaverse_collection.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/objaverse_collection.py",
+    "sha256": "516c67aa3d4c613d9f702c37376a7de7c53a801f1fbf04f2f8631f997eadddf3"
+  },
+  "../../src/reconlab/pilot_report.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/pilot_report.py",
+    "sha256": "86945ecb9a5c4894f2c57c0e1ff7cebf45a990a0685e46754f03429fc5f95d51"
+  },
+  "../../src/reconlab/pipeline.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/pipeline.py",
+    "sha256": "d44322f41c6af578f8d4eae59012a7b7e098d32de20a233c88811008b00badad"
+  },
+  "../../src/reconlab/registry.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/registry.py",
+    "sha256": "ba57fd06e105ff48f9088e739f6a59b08daa5a1b80bfb23aa4c3ced02a0db888"
+  },
+  "../../src/reconlab/rendering.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/rendering.py",
+    "sha256": "f86217f2cd5a66b4d37151ad63859abc60f145af80d273577fa92fbd526c87c4"
+  },
+  "../../src/reconlab/reporting.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/reporting.py",
+    "sha256": "95bd6260009a68a7649a1062347fd0011ba488f5bdba4645409b780ffd640ea1"
+  },
+  "../../src/reconlab/runtime.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/runtime.py",
+    "sha256": "0a1387e3912958ebe1f58cb57ced1196c2fdc3942bae92b637f2bafe176f52d7"
+  },
+  "../../src/reconlab/selection.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/selection.py",
+    "sha256": "a01f8b654e4d1d9b1da9207ae5c6820a5cae063a890e843ac91a978c044eba78"
+  },
+  "../../src/reconlab/synthetic.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/synthetic.py",
+    "sha256": "09b9f63f0ce6ed437b2382d3ec07c6c13f78c57f4b0c2318c7c5351f43014dc9"
+  },
+  "../../src/reconlab/types.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/types.py",
+    "sha256": "13d7b32eb992bfce6076e008cd751216f1550e4ede314abd36436526c2d318fc"
+  },
+  "../../src/reconlab/backends/__init__.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/backends/__init__.py",
+    "sha256": "ff74a61b8fd5e4cf4b2f139ce306a32ccd149926bef11d62bfd66e617be27401"
+  },
+  "../../src/reconlab/backends/blender_source.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/backends/blender_source.py",
+    "sha256": "1d9cd78c6e36d54e089ab46f90e78f72439a391682d4ddf53c5ff33393ebba0f"
+  },
+  "../../src/reconlab/backends/gsplat_known.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/backends/gsplat_known.py",
+    "sha256": "cff7ee4c51fe0161fbb68891e788234229f502cb0a7721b1db9e248b1f1907fe"
+  },
+  "../../src/reconlab/backends/hloc.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/backends/hloc.py",
+    "sha256": "07dcb4c4b9fac8f56218387ff68008a4b164d0d3b975c1d037743212bb5f599c"
+  },
+  "../../src/reconlab/backends/nerfstudio.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/backends/nerfstudio.py",
+    "sha256": "7a15c924a5e2615075d30a770dc49f838e208e728036910b4f41927c3ba48eca"
+  },
+  "../../src/reconlab/backends/ns_render_worker.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261115_objaverse_batch100_r01/src/reconlab/backends/ns_render_worker.py",
+    "sha256": "cf441a96fb9f4e2d7b22ace4f1652ee71f69121451b08627660a5b972d6e4fd8"
+  },
+  "../../src/reconlab/benchmark/__init__.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261117_matching10_sparse6_r01/src/reconlab/benchmark/__init__.py",
+    "sha256": "b4dd57e9a794b6ef7b283cc5fc215f1afbff4c77eedbb536d6cf07f72ef5021c"
+  },
+  "../../src/reconlab/benchmark/core.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261117_matching10_sparse6_r01/src/reconlab/benchmark/core.py",
+    "sha256": "b7424e5a0a366f8b72c13d2b9364dc32e4ce69b52953e1a06f377c171527ead5"
+  },
+  "../../src/reconlab/benchmark/diagnostics.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261117_matching10_sparse6_r01/src/reconlab/benchmark/diagnostics.py",
+    "sha256": "21a572c196b5fc85bc250489becfb657ef504af0184966b2f69a11562ac47c0c"
+  },
+  "../../src/reconlab/benchmark/estimated_scene.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261117_matching10_sparse6_r01/src/reconlab/benchmark/estimated_scene.py",
+    "sha256": "b0d937702a472c022cf1e0d3f7dfbdbbdd891965dd9245114ac6002ae2c861b1"
+  },
+  "../../src/reconlab/benchmark/external.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261117_matching10_sparse6_r01/src/reconlab/benchmark/external.py",
+    "sha256": "7f88e5ac734116fcd38044d397884b915bd6e7c259924a5300c9f95662cc84e2"
+  },
+  "../../src/reconlab/benchmark/gaussian.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261117_matching10_sparse6_r01/src/reconlab/benchmark/gaussian.py",
+    "sha256": "947e6d42344fc852f9755a6b930752c228ef739b881390607fa24cff3c8eeccd"
+  },
+  "../../src/reconlab/benchmark/gluemap_worker.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261117_matching10_sparse6_r01/src/reconlab/benchmark/gluemap_worker.py",
+    "sha256": "8105f79cffb6547ebb975fe4bbc05badc9736c2d23d919c505b538d1ba1766b2"
+  },
+  "../../src/reconlab/benchmark/gt_rendering.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261117_matching10_sparse6_r01/src/reconlab/benchmark/gt_rendering.py",
+    "sha256": "daf9711fec0185d155c5ea258e2dca2eae602a5a0bac4238e015bacb796e61a7"
+  },
+  "../../src/reconlab/benchmark/matchers.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261117_matching10_sparse6_r01/src/reconlab/benchmark/matchers.py",
+    "sha256": "e6d2525c2e317b8a96a0d50614a9451775d4e90e93f785144f54d0937b2f2078"
+  },
+  "../../src/reconlab/benchmark/multiview.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261117_matching10_sparse6_r01/src/reconlab/benchmark/multiview.py",
+    "sha256": "805fd36450668d9e6662f2dad474a39ec6e1771b4e9e9f4e69d833fab41fce08"
+  },
+  "../../src/reconlab/benchmark/native.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261117_matching10_sparse6_r01/src/reconlab/benchmark/native.py",
+    "sha256": "c549453e4b313af82a7bf2f4979f5d8ec881c5409864866c131d6ea80604dd12"
+  },
+  "../../src/reconlab/benchmark/portable_report.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261117_matching10_sparse6_r01/src/reconlab/benchmark/portable_report.py",
+    "sha256": "cf1c933a5543ef390d72eb4f49acb4ccff8409cfcc1820bf4792ee3c646e4b09"
+  },
+  "../../src/reconlab/benchmark/rendering.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261117_matching10_sparse6_r01/src/reconlab/benchmark/rendering.py",
+    "sha256": "a7f85ded8188f931311c0e7b377eb61df2ccb02cadd15ef8b0c3a5503d2b5ca0"
+  },
+  "../../src/reconlab/benchmark/runner.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261117_matching10_sparse6_r01/src/reconlab/benchmark/runner.py",
+    "sha256": "32eab7cc175dfd2d5d42318d2ebe7f496e5893a68f22366b1f3cb35ff77a87eb"
+  },
+  "../../src/reconlab/benchmark/sfm.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261117_matching10_sparse6_r01/src/reconlab/benchmark/sfm.py",
+    "sha256": "06839280e4115c640cb7c682948f275055da76de829ddd21507531857478e70c"
+  },
+  "../../src/reconlab/benchmark/slam.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261117_matching10_sparse6_r01/src/reconlab/benchmark/slam.py",
+    "sha256": "2cf362723acca0286c86c5cd19ddcbde4aa149529fbbb7f5a614f8c62d87dcce"
+  },
+  "../../src/reconlab/benchmark/sparse.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261117_matching10_sparse6_r01/src/reconlab/benchmark/sparse.py",
+    "sha256": "f4582aa8888305eb3b1c7418fcb7f4e4cd61aa0b88c25050bead5e9764aa3f85"
+  },
+  "../../src/reconlab/benchmark/sparse_scheduler.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261117_matching10_sparse6_r01/src/reconlab/benchmark/sparse_scheduler.py",
+    "sha256": "58f0076994b4790225abe517efa3d02d8c3b9db9e9da3c6ad4d0dc968f03e98c"
+  },
+  "../../src/reconlab/benchmark/sparse_worker.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261117_matching10_sparse6_r01/src/reconlab/benchmark/sparse_worker.py",
+    "sha256": "0a1d57fbc20aca07ae9a366d17fb94e60acb4afe1d11900d214af5a5f0cd5b2c"
+  },
+  "../../src/reconlab/benchmark/submission.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261117_matching10_sparse6_r01/src/reconlab/benchmark/submission.py",
+    "sha256": "781b84cab6cf5dbfc098a2cf8df9928d6c971b6d22101c7579aea9b71f3da28e"
+  },
+  "../../src/reconlab/benchmark/view_ablation.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261117_matching10_sparse6_r01/src/reconlab/benchmark/view_ablation.py",
+    "sha256": "4f684f16f6cf78d854fa259a0a256d36593ccc00b1b1435f9ce851535cc754dd"
+  },
+  "../../src/reconlab/benchmark/visuals.py": {
+    "source": "/mnt/afs/260010098/code/experiment_snapshots/20261117_matching10_sparse6_r01/src/reconlab/benchmark/visuals.py",
+    "sha256": "39c1d29a4603b94de9997c19aa7cb968a135705b82b7e75bf438cf79b97a94ac"
+  },
+  "provenance/runtime_versions.json": {
+    "source": "/mnt/afs/260010098/code/3dv_assignment/configs/matching10/provenance/runtime_versions.json",
+    "sha256": "88f5be4164e1528700ae1f74827ce7f6487bce6449d0b06ab5ed07a90f52a59b",
+    "export_sha256": "ed87b6d1ea671b4b299156c0e933f3dc0db355f2c7714985ab1bfa5edcc278ad",
+    "export_changes": "Repository path consolidation; original scientific run source remains at recorded source path"
+  },
+  "provenance/upstream_sources.json": {
+    "source": "/mnt/afs/260010098/code/3dv_assignment/configs/matching10/provenance/upstream_sources.json",
+    "sha256": "d68641d5bc149a1deba142ac91f3005b693ad2b48cc3ceb4466873da6893016d",
+    "export_sha256": "e19de2dc7c3592a93057af8f83c9dd40bcea168e725fc51118bc325808e540df",
+    "export_changes": "Repository path consolidation; original scientific run source remains at recorded source path"
+  }
+}

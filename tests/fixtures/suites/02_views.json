@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "question": "How do training-view count and view distribution affect the complete pipeline?",
+  "controls": ["fixed validation/test views", "same frontend and reconstruction settings", "same input resolution", "record actual selected IDs"],
+  "limitations": ["uniform_index does not guarantee uniform angular coverage", "angular_farthest requires externally supplied azimuths", "view selection affects both SfM and radiance supervision; this is an end-to-end experiment", "view fractions apply to training views only"],
+  "base": {"name": "base", "reconstructor": {"name": "splatfacto"}},
+  "variants": [
+    {"name": "views_all", "overrides": {}},
+    {"name": "views_quarter_uniform", "overrides": {"selector": {"name": "fraction", "options": {"fraction": 0.25, "strategy": "uniform_index"}}}},
+    {"name": "views_half_uniform", "overrides": {"selector": {"name": "fraction", "options": {"fraction": 0.5, "strategy": "uniform_index"}}}},
+    {"name": "views_half_contiguous", "overrides": {"selector": {"name": "fraction", "options": {"fraction": 0.5, "strategy": "contiguous"}}}},
+    {"name": "views_half_angular", "overrides": {"selector": {"name": "fraction", "options": {"fraction": 0.5, "strategy": "angular_farthest"}}}}
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "source": "/mnt/afs/260010098/data/3dv_assignment/matching10_sparse6_r01/results/romav2/3bb4f120d0df42fcba3dc4f550aaa9e5/matches/view_001__view_041.npz",
+  "sha256": "d6c2d743833187dfab33d03e58bf8bdbb3e9a5d6f41696d3d15cc69c2797424c",
+  "reuse": "raw model correspondences only; RANSAC and SfM rerun"
+}
