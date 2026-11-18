@@ -254,53 +254,8 @@ UID：`{r['uid']}`。注册 {r['registered']}/6 张；测试前景 PSNR {fmt(r.g
 body{font:16px/1.8 system-ui,"Noto Sans CJK SC",sans-serif;color:#243446;background:#edf2f6;margin:0}main{max-width:1100px;margin:30px auto;padding:35px;background:white}h1,h2,h3{color:#163f52}h2{border-bottom:2px solid #acd8ce;padding-bottom:8px;margin-top:45px}table{border-collapse:collapse;width:100%;font-size:13px;display:block;overflow:auto}td,th{padding:8px;border:1px solid #dbe5e9;vertical-align:top}th{background:#eaf5f2}img{max-width:100%;height:auto;display:block;margin:15px auto}img[alt*="3DGS"]{max-width:420px}code{overflow-wrap:anywhere;background:#f2f5f7}pre{white-space:pre-wrap;padding:18px;background:#f2f5f7}a{color:#126e87}blockquote{border-left:4px solid #dda44c;padding:8px 15px;background:#fff8eb;margin:15px 0}@media print{body{background:white;font-size:11pt}main{margin:0;padding:0;max-width:none}h2,h3{break-after:avoid}img{max-height:350px}a{color:inherit}table{font-size:9pt}tr{break-inside:avoid}}
 </style></head><body><main><p>离线报告：解压整个目录后打开本页；浏览器可打印为PDF，动画以GIF附件为准。</p>'''+body+'</main></body></html>'
         (self.output/'report.html').write_text(page)
-        overview='''# ReconLab — 3D Reconstruction and Rendering
-
-从多视角RGB恢复相机和稀疏几何，再优化3D Gaussian Splatting并渲染新视角。
-
-**主流程：** 6张图 → RoMa v2 → 前景与overlap≥0.5过滤 → RANSAC / SfM → 3000步3DGS → 留出视角评估与居中环绕GIF。
-
-[Pipeline documentation](docs/assignment2_report.md) · [实现与复现](experiments/roma100/README.md) · [提示词记录](prompts/user_requests.json) · [实验数据表](assets/tables) · [通用接口](src/reconlab/interfaces.py)
-
-新增的[6／12／24／36视角对照](experiments/view_count/README.md)已完成，简要分析已补入报告第3.5节；对应代码与逐阶段指标已归档。下方10例GIF保留原6图、3k步展示结果。
-
-组号、组员及贡献见报告中的待填写栏。报告按作业1清洗后的Objaverse数据作为输入来源的前提编写。GitHub仓库：[https://github.com/ciErraRuis/3dv_assignment2](https://github.com/ciErraRuis/3dv_assignment2)。
-
-## Doll 多视角推理示例
-
-仓库自带[6张Doll参考图及运行说明](assets/doll/README.md)。[推理入口](scripts/infer.py)默认使用这组asset，执行RoMa匹配、前景与分数过滤、SfM、3000步高斯优化及居中GIF生成；输入不含GT相机。正式报告第2.5节也提供了完整命令。
-
-## 数据与评价
-
-每物体源数据48张512×512图像；本轮固定6张训练、6张验证、6张测试。匹配器内部完整画面等比缩放至800/1280，保存实际输入和哈希。主路线估计相机参数，GT仅用于训练后的对齐与评估；最终方法说明和分析见报告，实验数据表仅保留正式报告引用的过滤与视角数量对照。GIF为已训练高斯渲染的72张512×512帧、24fps、总长3秒，编码可能合并相同帧。
-
-以下10例由用户指定用于展示，不改变原10例对照或固定100例的统计分母。这里的分数为各物体6张留出图的平均值；展示集不用于估计总体成功率。
-
-## 十物体匹配与渲染
-
-'''+replacements['SHOWCASE_TABLE']+'\n\n'+replacements['SHOWCASE_CARDS']+'''
-## 提交目录
-
-- `assets/doll`：命令示例使用的6张多视角输入及哈希、来源许可。
-- `assets/showcase`、`assets/figures`、`assets/tables`：10例全部匹配结果、连线图、居中GIF、[10例总览GIF](assets/showcase_overview.gif)、输入溯源及正式分析所需统计表。
-- `configs/roma100.json`：最终RoMa＋过滤＋SfM＋3DGS的实际参数与来源清单。
-- `configs/view_count.json`：报告中的视角数量对照参数。
-- `experiments/roma100`、`experiments/view_count`：主实验及视角对照实现，共用`src`中的算法模块。
-
-## 原始证据与代码
-
-各物体目录包含全部15对匹配的NPZ、4对代表性连线图、前景mask、过滤统计、SfM相机和点云、指标、训练记录及GIF。原始输入RGB、实际网络输入示例及完整预处理哈希随结果保留；完整未过滤对应与其余网络输入PNG保存在原实验存储，不重复提交。`matches/*.npz`保存坐标、分数和几何内点；`geometry.npz`保存恢复几何。72张原始环绕PNG的哈希另存，完整PNG及高斯checkpoint按溯源记录保存在实验存储，不提交大权重。
-
-- [当前实验源码快照与环境说明](experiments/roma100/README.md)
-- [报告原始统计表](assets/tables)、[来源与哈希](assets/artifact_manifest.json)
-- [源物体清单与许可](configs/roma100.json)：每个展示卡片亦链接到原模型来源。
-
-提示词文件收录目前可追溯的任务相关用户请求；不是所有历史模型调用的完整导出，也不包含系统指令或凭据。正式提交前仍需核对提示词覆盖范围。
-'''
-        for row in showcase:
-            needle=f"UID：`{row['uid']}`。"
-            overview=overview.replace(needle,needle+f" [全部匹配文件](assets/showcase/{row['uid']}/matches) · [全部连线图](assets/showcase/{row['uid']}/visuals)。")
-        (REPO/'README.md').write_text(overview)
+        # README is maintained separately: documentation, inference example,
+        # prompts and one ten-object montage. Evidence export must not overwrite it.
         gallery='# 十物体匹配与高斯渲染\n\n[Pipeline documentation](report.html)\n\n展示集与原10例对照集分开；GIF均来自前景＋overlap≥0.5的实际3DGS结果。\n\n'+replacements['SHOWCASE_TABLE']+'\n\n'+replacements['SHOWCASE_CARDS']
         gallery_body=MarkdownIt('commonmark',{'html':True}).enable('table').render(gallery)
         (self.output/'showcase.html').write_text(page[:page.index('<main>')]+'<main>'+gallery_body+'</main></body></html>')
